@@ -134,7 +134,7 @@ function koinsight:onDispatcherRegisterActions()
 end
 
 function koinsight:onKoInsightSync()
-  onUpload(self.koinsight_settings:getServerURL())
+  onUpload(self.koinsight_settings:getServerURL(), false)
 end
 
 -- Sync when device suspends
@@ -306,7 +306,6 @@ function koinsight:isWiFiConnected()
   logger.dbg("[KoInsight] WiFi status - On:", result and "true" or "false")
   return result
 end
-
 function koinsight:initMenuOrder()
   local menu_order_modules = {
     "ui/elements/filemanager_menu_order",
